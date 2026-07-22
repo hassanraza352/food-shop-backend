@@ -29,6 +29,10 @@ app.use("/api", orderRoutes);
 app.use("/api", cartRoutes);
 app.use("/api", dashboardRoutes);
 
+app.get("/", (req,res)=>{
+    res.send("Food Backend is Running 🚀");
+});
+
 
 
 
