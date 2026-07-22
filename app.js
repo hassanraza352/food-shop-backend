@@ -13,7 +13,9 @@ const userRoutes = require("./routes/userRoutes");
 const cookieParser = require("cookie-parser");
 const cartRoutes = require("./routes/cartRoutes");
 const dashboardRoutes = require("./routes/dashboardadminRoutes");
-
+app.get("/", (req,res)=>{
+    res.send("Food Backend is Running 🚀");
+});
 
 
 app.use(cors({
@@ -29,9 +31,7 @@ app.use("/api", orderRoutes);
 app.use("/api", cartRoutes);
 app.use("/api", dashboardRoutes);
 
-app.get("/", (req,res)=>{
-    res.send("Food Backend is Running 🚀");
-});
+
 
 
 
