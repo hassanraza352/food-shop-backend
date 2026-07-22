@@ -1,4 +1,6 @@
 require("dotenv").config();
+const dns = require("dns");
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 const express=require('express');
 const app=express();
 const path = require("path");
@@ -32,14 +34,13 @@ app.use("/api", dashboardRoutes);
 
 
 
-
 mongoose
-  .connect("mongodb://127.0.0.1:27017/foodWebsite")
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("✅ MongoDB Connected");
 
-    app.listen(3000, () => {
-      console.log("🚀 Server is listening");
+    app.listen(process.env.PORT, () => {
+      console.log(`🚀 Server is listening on port ${process.env.PORT}`);
     });
   })
   .catch((err) => {
