@@ -8,8 +8,8 @@ const {
   updateFood,
   deleteFood
 } = require("../controller/foodContoller");
-const authMiddleware = require("../middleware/authMiddleware");
-const adminMiddleware = require("../middleware/adminMiddleware");
+const authMiddleware = require("../middleware/authmiddleware");
+const adminMiddleware = require("../middleware/adminmiddleware");
 
 
 
